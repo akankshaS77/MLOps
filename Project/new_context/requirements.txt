@@ -1,0 +1,8 @@
+seaborn==0.12.2       # Latest stable version
+matplotlib==3.8.0     # Latest stable version
+scikit-learn==1.2.0   # Compatible with Python 3.8-3.10
+termcolor==2.2.0      # Latest stable version
+joblib==1.2.0         # Compatible with scikit-learn 1.2.0
+pandas==1.5.3         # Stable version, works well with numpy and sklearn
+numpy==1.23.5         # Compatible with pandas, sklearn, and matplotlib
+flask==2.2.5          # Latest Flask version
