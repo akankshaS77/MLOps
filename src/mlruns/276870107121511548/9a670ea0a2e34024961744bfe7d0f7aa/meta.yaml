@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/Aorus/OneDrive/Desktop/MLOps/MLOps_2/MLOps/src/mlruns/276870107121511548/9a670ea0a2e34024961744bfe7d0f7aa/artifacts
+deleted_time: 1737558252469
+end_time: 1737557286722
+entry_point_name: ''
+experiment_id: '276870107121511548'
+lifecycle_stage: deleted
+run_id: 9a670ea0a2e34024961744bfe7d0f7aa
+run_name: glamorous-rat-633
+run_uuid: 9a670ea0a2e34024961744bfe7d0f7aa
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737557221347
+status: 4
+tags: []
+user_id: Aorus

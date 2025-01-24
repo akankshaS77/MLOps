@@ -1,0 +1,16 @@
+artifact_uri: file:///C:/Users/Aorus/OneDrive/Desktop/MLOps/MLOps_2/MLOps/src/mlruns/828382847719399777/26630557ab0a4f90b2041be2217909bb/artifacts
+deleted_time: 1737561879328
+end_time: 1737561734720
+entry_point_name: ''
+experiment_id: '828382847719399777'
+lifecycle_stage: deleted
+run_id: 26630557ab0a4f90b2041be2217909bb
+run_name: SMOTE Decision Tree
+run_uuid: 26630557ab0a4f90b2041be2217909bb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737561732206
+status: 3
+tags: []
+user_id: Aorus
