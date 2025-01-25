@@ -517,14 +517,9 @@ print(evaluation_results)
 for name, conf_mat in conf_matr_.items():
     fig, ax = plt.subplots(figsize=(6,4))
     sns.heatmap(conf_mat, annot=True, cmap='coolwarm', fmt='g')
-    fig.suptitle(t=f"Confusion Matrix - {name}",
-                    color="orange",
-                    fontsize=16)
-    ax.set(xlabel="Predicted Label",
-            ylabel="Actual Label")
+    fig.suptitle(t=f"Confusion Matrix - {name}", color="orange", fontsize=16)
+    ax.set(xlabel="Predicted Label", ylabel="Actual Label")
     plt.show()
 
 import joblib   
 joblib.dump(rf_model,'rf_model')
-
-
