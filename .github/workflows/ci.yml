@@ -29,3 +29,63 @@ jobs:
 
       - name: Run linter
         run: flake8 --select=E1 src/CC_fraud_detect.py
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest
+
+      - name: Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: pytest -s tests/test.py
+
+  deploy:
+    name: Deploy Application
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          cp key1.pem ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Add SSH Known Hosts
+        run: ssh-keyscan -H 184.72.132.36 >> ~/.ssh/known_hosts
+
+      - name: Clean Target Directory on EC2
+        run: |
+          ssh -i ~/.ssh/id_rsa ubuntu@184.72.132.36 "rm -rf /home/ubuntu/{*,.git}"
+          
+      - name: Deploy Code to EC2
+        run: |
+          scp -r . ubuntu@184.72.132.36:/home/ubuntu
+          
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
