@@ -70,15 +70,15 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
 
       - name: Add SSH Known Hosts
-        run: ssh-keyscan -H 18.212.54.184 >> ~/.ssh/known_hosts
+        run: ssh-keyscan -H 100.24.47.201 >> ~/.ssh/known_hosts
 
       - name: Clean Target Directory on EC2
         run: |
-          ssh -i ~/.ssh/id_rsa ubuntu@18.212.54.184 "rm -rf /home/ubuntu/{*,.git}"
+          ssh -i ~/.ssh/id_rsa ubuntu@100.24.47.201 "rm -rf /home/ubuntu/{*,.git}"
           
       - name: Deploy Code to EC2
         run: |
-          scp -r . ubuntu@18.212.54.184:/home/ubuntu
+          scp -r . ubuntu@100.24.47.201:/home/ubuntu
           
       - name: Set up Python
         uses: actions/setup-python@v4
