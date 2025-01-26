@@ -1,4 +1,4 @@
-name: CI/CD for Machine Learning
+name: CI/CD for Machine Learning OPS
 
 on:
   push:
